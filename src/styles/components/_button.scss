@@ -1,0 +1,32 @@
+.button {
+  background: $blue;
+  border: none;
+  color: white;
+  display: inline-block;
+  font-weight: 300;
+  font-size: $font-size-large;
+  padding: $s-size;
+  line-height: 1;
+  text-decoration: none; // remove underline of a <Link>
+}
+
+.button--no-background {
+  background: none;
+}
+
+.button--secondary {
+  background: #888;
+}
+
+.button--danger {
+  background: #aa1c1a;
+}
+
+.button--facebook {
+  background: #3b5998;
+}
+
+.button--google {
+  background: #f4c20d;
+  color: black;
+}
