@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render HomePage correctly 1`] = `
+<div
+  className="banner-layout"
+>
+  <div
+    className="banner-layout__banner"
+  >
+    <h1
+      className="banner-layout__subtitle"
+    >
+      Firstname Lastname
+    </h1>
+    <p
+      className="banner-layout__title"
+    >
+      Hong Kong
+    </p>
+  </div>
+  <div>
+    <button
+      className="button button--larger"
+      onClick={[Function]}
+    >
+      Enter
+    </button>
+  </div>
+  <button
+    className="button button--bottom-right"
+    onClick={[Function]}
+  >
+    Login
+  </button>
+</div>
+`;

@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`editable ImageCard should render editable ImageCard correctly 1`] = `
+<div
+  className="image-card"
+>
+  <div
+    className="image-card__image"
+    onClick={[MockFunction]}
+  >
+    <button
+      className="button button--floating-top-left button--danger"
+      onClick={[Function]}
+    />
+  </div>
+  <div>
+    <input
+      className="image-card__title image-card__title--input"
+      onChange={[Function]}
+      value="Kowloon"
+    />
+    <input
+      className="image-card__subtitle image-card__subtitle--input"
+      onChange={[Function]}
+      value="Dec 31, 2017"
+    />
+    <textarea
+      className="image-card__description image-card__description--textarea"
+      onChange={[Function]}
+      value="Putarem quodque tamquam ii ob an deumque. Me assequi sapores ab verarum. Mei qui religionis nam fas devenietur ponderibus. Junctae invenit plausum differt de ipsamet externo is. Mutationum sui negationem exponuntur"
+    />
+    <div
+      className="image-card__actions"
+    >
+      <button
+        className="button"
+        onClick={[Function]}
+      >
+        Update
+      </button>
+      <button
+        className="button"
+        onClick={[Function]}
+      >
+        Discard
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`non-editable/view-only ImageCard should render non-editable ImageCard correctly 1`] = `
+<div
+  className="image-card"
+>
+  <div
+    className="image-card__image"
+    onClick={[MockFunction]}
+  />
+  <div>
+    <h3
+      className="image-card__title"
+    >
+      Kowloon
+    </h3>
+    <h4
+      className="image-card__subtitle"
+    >
+      Dec 31, 2017
+    </h4>
+    <p
+      className="image-card__description"
+    >
+      Putarem quodque tamquam ii ob an deumque. Me assequi sapores ab verarum. Mei qui religionis nam fas devenietur ponderibus. Junctae invenit plausum differt de ipsamet externo is. Mutationum sui negationem exponuntur
+    </p>
+  </div>
+</div>
+`;

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addImage, editImage, deleteImage } from '../actions/images';
 
-class PhotoCard extends React.Component {
+export class ImageCard extends React.Component {
   constructor(props) {
     super();
     const { title, subtitle, description } = props;
@@ -90,4 +90,4 @@ class PhotoCard extends React.Component {
   }
 }
 
-export default connect(undefined, { addImage, editImage, deleteImage })(PhotoCard);
+export default connect(undefined, { addImage, editImage, deleteImage })(ImageCard);

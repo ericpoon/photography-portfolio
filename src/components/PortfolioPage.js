@@ -5,13 +5,17 @@ import ImageDetailModal from './ImageDetailModal';
 import ImageCardCollection from './ImageCardCollection';
 import ImageCard from './ImageCard';
 
-const PortfolioPage = props => (
+export const PortfolioPage = props => (
   <div>
     <ImageDetailModal />
     <div className={'content-container'}>
       <ImageCardCollection>
         {props.images.map((image) => {
-          return <ImageCard key={image.id} {...image} onImageClick={() => props.showDetail()} />;
+          return (<ImageCard
+            {...image}
+            key={image.id}
+            onImageClick={() => props.showDetail(image.id)}
+          />);
         })}
       </ImageCardCollection>
     </div>

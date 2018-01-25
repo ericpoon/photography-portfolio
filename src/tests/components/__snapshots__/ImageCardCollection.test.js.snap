@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ImageCardCollection 1`] = `
+<div
+  className="image-card-collection"
+>
+  <div
+    className="image-card-collection__row"
+    key=",,"
+  >
+    <ImageCard />
+    <ImageCard />
+    <ImageCard />
+  </div>
+</div>
+`;

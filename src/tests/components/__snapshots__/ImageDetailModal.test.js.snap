@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ImageDetailModal correctly when isOpen is false 1`] = `
+<Modal
+  appElement={null}
+  ariaHideApp={true}
+  bodyOpenClassName="ReactModal__Body--open"
+  closeTimeoutMS={0}
+  isOpen={false}
+  onRequestClose={[Function]}
+  parentSelector={[Function]}
+  portalClassName="ReactModalPortal"
+  shouldCloseOnEsc={true}
+  shouldCloseOnOverlayClick={true}
+  shouldFocusAfterRender={true}
+  shouldReturnFocusAfterClose={true}
+>
+  <div>
+    <img
+      alt=""
+      src="/images/bg.jpg"
+    />
+    <h3>
+      Kowloon
+    </h3>
+    <h4>
+      Dec 31, 2017
+    </h4>
+    <p>
+      Putarem quodque tamquam ii ob an deumque. Me assequi sapores ab verarum. Mei qui religionis nam fas devenietur ponderibus. Junctae invenit plausum differt de ipsamet externo is. Mutationum sui negationem exponuntur
+    </p>
+  </div>
+</Modal>
+`;
+
+exports[`should render ImageDetailModal correctly when isOpen is true 1`] = `
+<Modal
+  appElement={null}
+  ariaHideApp={true}
+  bodyOpenClassName="ReactModal__Body--open"
+  closeTimeoutMS={0}
+  isOpen={true}
+  onRequestClose={[Function]}
+  parentSelector={[Function]}
+  portalClassName="ReactModalPortal"
+  shouldCloseOnEsc={true}
+  shouldCloseOnOverlayClick={true}
+  shouldFocusAfterRender={true}
+  shouldReturnFocusAfterClose={true}
+>
+  <div>
+    <img
+      alt=""
+      src="/images/bg.jpg"
+    />
+    <h3>
+      Kowloon
+    </h3>
+    <h4>
+      Dec 31, 2017
+    </h4>
+    <p>
+      Putarem quodque tamquam ii ob an deumque. Me assequi sapores ab verarum. Mei qui religionis nam fas devenietur ponderibus. Junctae invenit plausum differt de ipsamet externo is. Mutationum sui negationem exponuntur
+    </p>
+  </div>
+</Modal>
+`;

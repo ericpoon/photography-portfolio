@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import ImageCardCollection from './ImageCardCollection';
 import ImageCard from './ImageCard';
 
-const AdminPage = (props) => {
+export const AdminPage = (props) => {
   return (
     <div>
       <div className={'content-container'}>

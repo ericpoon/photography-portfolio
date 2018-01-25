@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render PortfolioPage 1`] = `
+<div>
+  <Connect(ImageDetailModal) />
+  <div
+    className="content-container"
+  >
+    <Component>
+      <Connect(ImageCard)
+        description="Putarem quodque tamquam ii ob an deumque. Me assequi sapores ab verarum. Mei qui religionis nam fas devenietur ponderibus. Junctae invenit plausum differt de ipsamet externo is. Mutationum sui negationem exponuntur"
+        id={1000}
+        image={0}
+        key="1000"
+        onImageClick={[Function]}
+        subtitle="Dec 31, 2017"
+        title="Kowloon"
+      />
+      <Connect(ImageCard)
+        description="Veniebant sex videbatur assignare eas. Ima secundum synopsis imponere spectant. realitatem aliquamdiu hoc eam requiratur pro."
+        id={1001}
+        image={0}
+        key="1001"
+        onImageClick={[Function]}
+        subtitle="Jan 18, 2018"
+        title="Hong Kong Island"
+      />
+      <Connect(ImageCard)
+        description="Oculis nondum fusius sub ens urgeat fuerit rea sum. Paulo his novas somno audio nia. Religio lor ordinis propria habemus cui. Cohaereant vis sim consistere ope concipitur imaginabor afferuntur."
+        id={1002}
+        image={0}
+        key="1002"
+        onImageClick={[Function]}
+        subtitle="Jan 1, 2018"
+        title="Causeway Bay"
+      />
+      <Connect(ImageCard)
+        description="Eoex deumque reddere publice ea similes attinet. Sensuum acgifallant incipit."
+        id={1003}
+        image={0}
+        key="1003"
+        onImageClick={[Function]}
+        subtitle="April 27, 2017"
+        title="Shenzhen"
+      />
+      <Connect(ImageCard)
+        description="Vocem id alias to curam multi brevi in novam ii. Ima secundum synopsis."
+        id={1004}
+        image={0}
+        key="1004"
+        onImageClick={[Function]}
+        subtitle="Oct 9, 2016"
+        title="Shanghai"
+      />
+    </Component>
+  </div>
+</div>
+`;
