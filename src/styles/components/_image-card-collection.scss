@@ -1,0 +1,45 @@
+.image-card-collection {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-card-collection__row {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  margin: 0 $l-size $l-size $l-size;
+  justify-content: center;
+  > * {
+    width: 40rem;
+    margin: 0 $l-size;
+  }
+  > :first-child {
+    margin-left: 0;
+  }
+  > :last-child {
+    margin-right: 0;
+  }
+  @media (max-width: $desktop-1440-breakpoint) {
+    > * {
+      width: 34rem;
+    }
+  }
+  @media (max-width: $desktop-1280-breakpoint) {
+    margin-left: $s-size;
+    margin-right: $s-size;
+    > * {
+      width: 28rem;
+      margin: 0 $m-size;
+
+    }
+  }
+  @media (max-width: $desktop-breakpoint) {
+    //TODO: show only 2 per row, try react-cellblock
+    margin-left: $s-size;
+    margin-right: $s-size;
+    > * {
+      width: 20rem;
+      margin: 0 $s-size;
+    }
+  }
+}

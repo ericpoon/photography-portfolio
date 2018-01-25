@@ -26,22 +26,25 @@ const renderApp = () => {
   }
 };
 
-ReactDOM.render(<LoadingPage />, document.getElementById('app'));
 
-firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-    const { uid, displayName, providerData } = user;
-    store.dispatch(login(uid, displayName, providerData[0].providerId));
+renderApp();
 
-    /* fetch data and set initial store state here */
 
-    renderApp();
-    if (history.location.pathname === '/') {
-      history.push('/dashboard');
-    }
-  } else {
-    store.dispatch(logout());
-    renderApp();
-    history.push('/');
-  }
-});
+// ReactDOM.render(<LoadingPage />, document.getElementById('app'));
+// firebase.auth().onAuthStateChanged((user) => {
+//   if (user) {
+//     const { uid, displayName, providerData } = user;
+//     store.dispatch(login(uid, displayName, providerData[0].providerId));
+//
+//     /* fetch data and set initial store state here */
+//
+//     renderApp();
+//     if (history.location.pathname === '/') {
+//       history.push('/dashboard');
+//     }
+//   } else {
+//     store.dispatch(logout());
+//     renderApp();
+//     history.push('/');
+//   }
+// });

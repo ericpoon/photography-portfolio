@@ -1,0 +1,32 @@
+.image-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+
+.image-card__image {
+  //background: url("/images/bg.jpg");
+  background: darkseagreen;
+  background-size: cover;
+  width: 100%;
+  padding-bottom: 75%;
+  margin-bottom: $s-size;
+}
+
+.image-card__title {
+  margin: 0;
+  line-height: 1.2;
+  font-size: $font-size-large;
+}
+
+.image-card__subtitle {
+  @extend .image-card__title;
+  font-size: $font-size-medium;
+}
+
+.image-card__description {
+  @extend .image-card__title;
+  font-size: $font-size-small;
+  margin-top: $s-size;
+}

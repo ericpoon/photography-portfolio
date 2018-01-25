@@ -30,3 +30,8 @@
   background: #f4c20d;
   color: black;
 }
+
+.button--larger {
+  padding: $m-size $l-size*2;
+  font-size: $font-size-large*1.2;
+}

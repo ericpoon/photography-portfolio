@@ -38,8 +38,6 @@
     "no-restricted-globals": "off",
     "import/no-extraneous-dependencies": "off",
     "import/no-named-as-default": "off",
-    "jsx-a11y/no-autofocus": "off",
-    // https://w3c.github.io/html/sec-forms.html#autofocusing-a-form-control-the-autofocus-attribute
     "jsx-a11y/anchor-is-valid": [
       "error",
       {
@@ -60,6 +58,15 @@
         "children": "never"
       }
     ],
-    "react/no-unescaped-entities": "off"
+    "react/no-unescaped-entities": "off",
+
+
+    // ---- For the disabled and accessive tech ----
+    // https://w3c.github.io/html/sec-forms.html#autofocusing-a-form-control-the-autofocus-attribute
+    "jsx-a11y/no-autofocus": "off",
+    // Coding for the keyboard is important for users with physical disabilities who cannot use a mouse
+    "jsx-a11y/click-events-have-key-events": "off",
+    // The WAI-ARIA role attribute confers a semantic mapping to an element. The semantic value can then be expressed to a user via assistive technology.
+    "jsx-a11y/no-static-element-interactions": "off",
   }
 }
