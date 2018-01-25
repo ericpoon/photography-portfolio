@@ -5,6 +5,10 @@ const onEnterClick = () => {
   history.push('/portfolio');
 };
 
+const onLoginClick = () => {
+  history.push('/login');
+};
+
 const HomePage = () => (
   <div className={'banner-layout'}>
     <div className={'banner-layout__banner'}>
@@ -14,6 +18,7 @@ const HomePage = () => (
     <div>
       <button onClick={onEnterClick} className={'button button--larger'}>Enter</button>
     </div>
+    <button onClick={onLoginClick} className={'button button--bottom-right'}>Login</button>
   </div>
 );
 

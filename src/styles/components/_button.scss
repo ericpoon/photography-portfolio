@@ -22,6 +22,29 @@
   background: #aa1c1a;
 }
 
+.button--larger {
+  padding: $m-size $l-size*2;
+  font-size: $font-size-large*1.2;
+}
+
+.button--bottom-right {
+  position: absolute;
+  bottom: $m-size;
+  right: $m-size;
+}
+
+.button--floating-top-left {
+  @extend .button--danger;
+  position: relative;
+  top: 0;
+  left: 0;
+  border-radius: 100%;
+  height: $s-size;
+  width: $s-size;
+  font-size: 0;
+  transform: translateX(-50%) translateY(-50%);
+}
+
 .button--facebook {
   background: #3b5998;
 }
@@ -29,9 +52,4 @@
 .button--google {
   background: #f4c20d;
   color: black;
-}
-
-.button--larger {
-  padding: $m-size $l-size*2;
-  font-size: $font-size-large*1.2;
 }

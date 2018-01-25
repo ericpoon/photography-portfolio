@@ -6,7 +6,7 @@ export const PublicRoute = (props) => {
   const { isAuthenticated, component: Component, ...restProps } = props;
   const ActualComponent = (componentProps) => {
     if (isAuthenticated) {
-      return <Redirect to={'/dashboard'} />;
+      return <Redirect to={'/admin'} />;
     }
     return <Component {...componentProps} />;
   };

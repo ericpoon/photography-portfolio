@@ -9,6 +9,8 @@ import configureStore from './store/configureStore';
 import { login, logout } from './actions/auth';
 import LoadingPage from './components/LoadingPage';
 import firebase from './firebase/firebase';
+import { setImages } from './actions/images';
+import images from './tests/fixtures/images';
 import './styles/styles.scss';
 
 const store = configureStore();
@@ -26,9 +28,8 @@ const renderApp = () => {
   }
 };
 
-
+store.dispatch(setImages(images));
 renderApp();
-
 
 // ReactDOM.render(<LoadingPage />, document.getElementById('app'));
 // firebase.auth().onAuthStateChanged((user) => {
@@ -39,12 +40,14 @@ renderApp();
 //     /* fetch data and set initial store state here */
 //
 //     renderApp();
-//     if (history.location.pathname === '/') {
-//       history.push('/dashboard');
+//     if (history.location.pathname === '/login') {
+//       history.push('/admin');
 //     }
 //   } else {
 //     store.dispatch(logout());
 //     renderApp();
-//     history.push('/');
+//     if (history.location.pathname === '/admin') {
+//       history.push('/');
+//     }
 //   }
 // });

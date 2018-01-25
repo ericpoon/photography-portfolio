@@ -1,4 +1,4 @@
-import { showDetail, hideDetail } from '../../actions/imageDetail';
+import { showDetail, hideDetail } from '../../actions/gallery';
 
 it('should create showDetail action', () => {
   const id = 'image id';

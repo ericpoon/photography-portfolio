@@ -1,7 +1,8 @@
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import authReducer from '../reducers/auth';
-import imageDetailReducer from '../reducers/imageDetail';
+import imagesReducer from '../reducers/images';
+import galleryReducer from '../reducers/gallery';
 
 /* eslint-disable no-underscore-dangle */
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -11,7 +12,8 @@ export default () => {
   return createStore(
     combineReducers({
       auth: authReducer,
-      imageDetail: imageDetailReducer,
+      gallery: galleryReducer,
+      images: imagesReducer,
     }),
     composeEnhancers(applyMiddleware(thunk)),
   );
