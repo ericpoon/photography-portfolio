@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import HomePage from '../../components/HomePage';
+import HomePage from '../../../components/pages/HomePage';
 
 let wrapper,
   history;

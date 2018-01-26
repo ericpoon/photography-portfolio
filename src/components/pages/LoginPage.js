@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { startGoogleLogin, startFacebookLogin } from '../actions/auth';
+import { startGoogleLogin, startFacebookLogin } from '../../actions/auth';
 
 export const LoginPage = props => (
   <div className={'box-layout'}>

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`with Header provided renders Route 1`] = `
+<Route
+  component={[Function]}
+  prop1="a prop"
+  prop2="another prop"
+/>
+`;

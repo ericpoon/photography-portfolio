@@ -1,16 +1,16 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import ImageCardCollection from '../../components/ImageCardCollection';
-import { ImageCard } from '../../components/ImageCard';
 
 let wrapper;
 
 beforeEach(() => {
+  const MockImageCard = jest.fn(() => (<div />));
   wrapper = shallow(
     <ImageCardCollection>
-      <ImageCard />
-      <ImageCard />
-      <ImageCard />
+      <MockImageCard />
+      <MockImageCard />
+      <MockImageCard />
     </ImageCardCollection>);
 });
 

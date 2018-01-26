@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { PortfolioPage } from '../../components/PortfolioPage';
-import images from '../fixtures/images';
+import { PortfolioPage } from '../../../components/pages/PortfolioPage';
+import images from '../../fixtures/images';
 
 let wrapper,
   showDetail;

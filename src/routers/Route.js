@@ -1,9 +1,9 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route as NativeRoute } from 'react-router-dom';
 
-const RouteWithHeader = (props) => {
+const Route = (props) => {
   const { component: Component, header: Header, ...restProps } = props;
-  const ActualComponent = (componentProps) => {
+  const RouteComponent = (componentProps) => {
     if (Header) {
       return (
         <div>
@@ -15,7 +15,7 @@ const RouteWithHeader = (props) => {
     return <Component {...componentProps} />;
   };
 
-  return <Route {...restProps} component={ActualComponent} />;
+  return <NativeRoute {...restProps} component={RouteComponent} />;
 };
 
-export default RouteWithHeader;
+export default Route;

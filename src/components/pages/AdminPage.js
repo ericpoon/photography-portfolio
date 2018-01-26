@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import ImageCardCollection from './ImageCardCollection';
-import ImageCard from './ImageCard';
+import ImageCardCollection from '../ImageCardCollection';
+import ImageCard from '../ImageCard';
 
 export const AdminPage = (props) => {
   return (

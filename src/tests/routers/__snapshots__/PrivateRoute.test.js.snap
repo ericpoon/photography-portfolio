@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`if authenticated should render private-only route if authenticated 1`] = `
+<Route
+  prop1="a prop"
+  prop2="another prop"
+/>
+`;
+
+exports[`if not authenticated should render Redirect if not authenticated 1`] = `
+<Redirect
+  push={false}
+  to="fallback url"
+/>
+`;

@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Header correctly 1`] = `
+<Header
+  title="Portfolio"
+>
+  <button
+    className="button button--no-background"
+    onClick={[Function]}
+  />
+  <button
+    className="button button--no-background"
+    onClick={[MockFunction]}
+  >
+    Logout
+  </button>
+</Header>
+`;

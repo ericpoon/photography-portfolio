@@ -1,12 +1,13 @@
 import React from 'react';
 import { Router, Switch } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
-import Header from '../components/Header';
-import NotFoundPage from '../components/NotFoundPage';
-import HomePage from '../components/HomePage';
-import LoginPage from '../components/LoginPage';
-import PortfolioPage from '../components/PortfolioPage';
-import AdminPage from '../components/AdminPage';
+import AdminHeader from '../components/AdminHeader';
+import VisitorHeader from '../components/VisitorHeader';
+import NotFoundPage from '../components/pages/NotFoundPage';
+import HomePage from '../components/pages/HomePage';
+import LoginPage from '../components/pages/LoginPage';
+import PortfolioPage from '../components/pages/PortfolioPage';
+import AdminPage from '../components/pages/AdminPage';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 import Route from './Route';
@@ -25,20 +26,20 @@ const AppRouter = () => (
         <Route
           path={'/portfolio'}
           component={PortfolioPage}
-          header={Header}
+          header={VisitorHeader}
           exact
         />
         <PublicRoute
           path={'/login'}
           component={LoginPage}
-          redirectTo={'/admin'}
+          fallbackTo={'/admin'}
           exact
         />
         <PrivateRoute
           path={'/admin'}
           component={AdminPage}
-          header={Header}
-          redirectTo={'/login'}
+          header={AdminHeader}
+          fallbackTo={'/login'}
           exact
         />
         <Route component={NotFoundPage} />

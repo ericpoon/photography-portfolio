@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders AppRouter 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "createHref": [Function],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "pathname": "blank",
+        "search": "",
+        "state": undefined,
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <div>
+    <Switch>
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        header={[Function]}
+        path="/portfolio"
+      />
+      <Connect(PublicRoute)
+        component={[Function]}
+        exact={true}
+        fallbackTo="/admin"
+        path="/login"
+      />
+      <Connect(PrivateRoute)
+        component={[Function]}
+        exact={true}
+        fallbackTo="/login"
+        header={[Function]}
+        path="/admin"
+      />
+      <Route
+        component={[Function]}
+      />
+    </Switch>
+  </div>
+</Router>
+`;

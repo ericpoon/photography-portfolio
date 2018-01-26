@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { AdminPage } from '../../components/AdminPage';
-import images from '../fixtures/images';
+import { AdminPage } from '../../../components/pages/AdminPage';
+import images from '../../fixtures/images';
 
 let wrapper;
 

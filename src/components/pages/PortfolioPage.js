@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { showDetail } from '../actions/gallery';
-import ImageDetailModal from './ImageDetailModal';
-import ImageCardCollection from './ImageCardCollection';
-import ImageCard from './ImageCard';
+import { showDetail } from '../../actions/gallery';
+import ImageDetailModal from '../ImageDetailModal';
+import ImageCardCollection from '../ImageCardCollection';
+import ImageCard from '../ImageCard';
 
 export const PortfolioPage = props => (
   <div>

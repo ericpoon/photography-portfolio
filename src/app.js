@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import AppRouter, { history } from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import { login, logout } from './actions/auth';
-import LoadingPage from './components/LoadingPage';
+import LoadingPage from './components/pages/LoadingPage';
 import firebase from './firebase/firebase';
 import { setImages } from './actions/images';
 import images from './tests/fixtures/images';
@@ -21,6 +21,7 @@ const jsx = (
 );
 
 let hasRendered = false;
+let loggedInWithGoogle = false;
 const renderApp = () => {
   if (!hasRendered) {
     ReactDOM.render(jsx, document.getElementById('app'));
@@ -29,20 +30,27 @@ const renderApp = () => {
 };
 
 ReactDOM.render(<LoadingPage />, document.getElementById('app'));
+store.dispatch(setImages(images));
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     const { uid, displayName, providerData } = user;
-    store.dispatch(login(uid, displayName, providerData[0].providerId));
+    const { providerId } = providerData[0];
+    loggedInWithGoogle = providerId === 'google.com';
+    store.dispatch(login(uid, displayName, providerId));
 
-    /* fetch data and set initial store state here */
-    store.dispatch(setImages(images));
+    /* fetch private data and set initial store state here */
 
     renderApp();
     if (history.location.pathname === '/login') {
       history.push('/admin');
     }
   } else {
+    if (loggedInWithGoogle) {
+      const loginPageUrl = `${location.origin}/login`;
+      location.assign(`https://www.google.com/accounts/Logout?continue=https://appengine.google.com/_ah/logout?continue=${loginPageUrl}`);
+      loggedInWithGoogle = false;
+    }
     store.dispatch(logout());
     renderApp();
     if (history.location.pathname === '/admin') {
@@ -50,3 +58,4 @@ firebase.auth().onAuthStateChanged((user) => {
     }
   }
 });
+

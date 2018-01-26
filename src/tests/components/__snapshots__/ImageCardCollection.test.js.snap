@@ -8,9 +8,9 @@ exports[`should render ImageCardCollection 1`] = `
     className="image-card-collection__row"
     key=",,"
   >
-    <ImageCard />
-    <ImageCard />
-    <ImageCard />
+    <mockConstructor />
+    <mockConstructor />
+    <mockConstructor />
   </div>
 </div>
 `;
