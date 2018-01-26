@@ -3,10 +3,20 @@ import { connect } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
 
 export const PublicRoute = (props) => {
-  const { isAuthenticated, component: Component, ...restProps } = props;
+  const {
+    isAuthenticated, component: Component, header: Header, redirectTo, ...restProps
+  } = props;
   const ActualComponent = (componentProps) => {
     if (isAuthenticated) {
-      return <Redirect to={'/admin'} />;
+      return <Redirect to={redirectTo} />;
+    }
+    if (Header) {
+      return (
+        <div>
+          <Header />
+          <Component {...componentProps} />
+        </div>
+      );
     }
     return <Component {...componentProps} />;
   };

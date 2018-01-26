@@ -28,26 +28,25 @@ const renderApp = () => {
   }
 };
 
-store.dispatch(setImages(images));
-renderApp();
+ReactDOM.render(<LoadingPage />, document.getElementById('app'));
 
-// ReactDOM.render(<LoadingPage />, document.getElementById('app'));
-// firebase.auth().onAuthStateChanged((user) => {
-//   if (user) {
-//     const { uid, displayName, providerData } = user;
-//     store.dispatch(login(uid, displayName, providerData[0].providerId));
-//
-//     /* fetch data and set initial store state here */
-//
-//     renderApp();
-//     if (history.location.pathname === '/login') {
-//       history.push('/admin');
-//     }
-//   } else {
-//     store.dispatch(logout());
-//     renderApp();
-//     if (history.location.pathname === '/admin') {
-//       history.push('/');
-//     }
-//   }
-// });
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    const { uid, displayName, providerData } = user;
+    store.dispatch(login(uid, displayName, providerData[0].providerId));
+
+    /* fetch data and set initial store state here */
+    store.dispatch(setImages(images));
+
+    renderApp();
+    if (history.location.pathname === '/login') {
+      history.push('/admin');
+    }
+  } else {
+    store.dispatch(logout());
+    renderApp();
+    if (history.location.pathname === '/admin') {
+      history.push('/');
+    }
+  }
+});

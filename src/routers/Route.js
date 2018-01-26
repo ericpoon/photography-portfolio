@@ -1,16 +1,18 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import Header from '../components/Header';
 
 const RouteWithHeader = (props) => {
-  const { component: Component, ...restProps } = props;
+  const { component: Component, header: Header, ...restProps } = props;
   const ActualComponent = (componentProps) => {
-    return (
-      <div>
-        <Header />
-        <Component {...componentProps} />
-      </div>
-    );
+    if (Header) {
+      return (
+        <div>
+          <Header />
+          <Component {...componentProps} />
+        </div>
+      );
+    }
+    return <Component {...componentProps} />;
   };
 
   return <Route {...restProps} component={ActualComponent} />;
