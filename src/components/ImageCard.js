@@ -1,11 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addImage, editImage, deleteImage } from '../actions/images';
 
 export class ImageCard extends React.Component {
   constructor(props) {
     super();
-    const { title, subtitle, description } = props;
+    const { title = '', subtitle = '', description = '' } = props;
     this.state = { title, subtitle, description };
   }
 
@@ -18,17 +17,26 @@ export class ImageCard extends React.Component {
   onDescriptionChange = (e) => {
     this.setState({ description: e.target.value.trim() });
   };
-  onUpdateClick = () => {
+  onSaveClick = () => {
     const { title, subtitle, description } = this.state;
+    const { onSaveClick } = this.props;
     const updates = { title, subtitle, description };
-    this.props.editImage(this.props.id, updates);
+    if (onSaveClick) onSaveClick(updates);
+  };
+  onDeleteClick = () => {
+    this.setState({ title: '', subtitle: '', description: '' });
+    const { onDeleteClick } = this.props;
+    if (onDeleteClick) onDeleteClick();
   };
   onDiscardClick = () => {
-    const { title, subtitle, description } = this.props;
+    const { title = '', subtitle = '', description = '' } = this.props;
     this.setState({ title, subtitle, description });
   };
-  onRemoveClick = () => {
-    this.props.deleteImage(this.props.id);
+
+  isDirty = (field) => {
+    const propVal = this.props[field] ? this.props[field] : '';
+    const stateVal = this.state[field] ? this.state[field] : '';
+    return propVal !== stateVal;
   };
 
   render() {
@@ -40,14 +48,14 @@ export class ImageCard extends React.Component {
           <div className={'image-card__image'} onClick={onImageClick}>
             <button
               className={'button button--floating-top-left button--danger'}
-              onClick={this.onRemoveClick}
+              onClick={this.onDeleteClick}
             />
           </div>
           <div>
             <input
               className={
                 `image-card__title image-card__title--input${
-                  this.state.title !== this.props.title ? ' is-dirty' : ''}`
+                  this.isDirty('title') ? ' is-dirty' : ''}`
               }
               value={title}
               onChange={this.onTitleChange}
@@ -55,7 +63,7 @@ export class ImageCard extends React.Component {
             <input
               className={
                 `image-card__subtitle image-card__subtitle--input${
-                  this.state.subtitle !== this.props.subtitle ? ' is-dirty' : ''}`
+                  this.isDirty('subtitle') ? ' is-dirty' : ''}`
               }
               value={subtitle}
               onChange={this.onSubtitleChange}
@@ -63,13 +71,13 @@ export class ImageCard extends React.Component {
             <textarea
               className={
                 `image-card__description image-card__description--textarea${
-                  this.state.description !== this.props.description ? ' is-dirty' : ''}`
+                  this.isDirty('description') ? ' is-dirty' : ''}`
               }
               value={description}
               onChange={this.onDescriptionChange}
             />
             <div className={'image-card__actions'}>
-              <button className={'button'} onClick={this.onUpdateClick}>Update</button>
+              <button className={'button'} onClick={this.onSaveClick}>Save</button>
               <button className={'button'} onClick={this.onDiscardClick}>Discard</button>
             </div>
           </div>
@@ -90,4 +98,4 @@ export class ImageCard extends React.Component {
   }
 }
 
-export default connect(undefined, { addImage, editImage, deleteImage })(ImageCard);
+export default connect()(ImageCard);

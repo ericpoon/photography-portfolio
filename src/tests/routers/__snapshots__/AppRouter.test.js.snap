@@ -49,6 +49,13 @@ exports[`renders AppRouter 1`] = `
         header={[Function]}
         path="/admin"
       />
+      <Connect(PrivateRoute)
+        component={[Function]}
+        exact={true}
+        fallbackTo="/login"
+        header={[Function]}
+        path="/add"
+      />
       <Route
         component={[Function]}
       />

@@ -12,6 +12,8 @@ exports[`should render AdminPage correctly 1`] = `
         id={1000}
         image={0}
         key="1000"
+        onDeleteClick={[Function]}
+        onSaveClick={[Function]}
         subtitle="Dec 31, 2017"
         title="Kowloon"
       />
@@ -21,6 +23,8 @@ exports[`should render AdminPage correctly 1`] = `
         id={1001}
         image={0}
         key="1001"
+        onDeleteClick={[Function]}
+        onSaveClick={[Function]}
         subtitle="Jan 18, 2018"
         title="Hong Kong Island"
       />
@@ -30,6 +34,8 @@ exports[`should render AdminPage correctly 1`] = `
         id={1002}
         image={0}
         key="1002"
+        onDeleteClick={[Function]}
+        onSaveClick={[Function]}
         subtitle="Jan 1, 2018"
         title="Causeway Bay"
       />
@@ -39,6 +45,8 @@ exports[`should render AdminPage correctly 1`] = `
         id={1003}
         image={0}
         key="1003"
+        onDeleteClick={[Function]}
+        onSaveClick={[Function]}
         subtitle="April 27, 2017"
         title="Shenzhen"
       />
@@ -48,6 +56,8 @@ exports[`should render AdminPage correctly 1`] = `
         id={1004}
         image={0}
         key="1004"
+        onDeleteClick={[Function]}
+        onSaveClick={[Function]}
         subtitle="Oct 9, 2016"
         title="Shanghai"
       />

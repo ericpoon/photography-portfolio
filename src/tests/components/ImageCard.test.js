@@ -8,9 +8,8 @@ let wrapper,
   subtitle,
   description,
   onImageClick,
-  addImage,
-  editImage,
-  deleteImage;
+  onSaveClick,
+  onDeleteClick;
 
 beforeEach(() => {
   const { title: t, subtitle: s, description: d } = images[0];
@@ -18,18 +17,16 @@ beforeEach(() => {
   subtitle = s;
   description = d;
   onImageClick = jest.fn();
-  addImage = jest.fn();
-  editImage = jest.fn();
-  deleteImage = jest.fn();
+  onSaveClick = jest.fn();
+  onDeleteClick = jest.fn();
   wrapper = shallow(<ImageCard
     editable={false}
     title={title}
     subtitle={subtitle}
     description={description}
     onImageClick={onImageClick}
-    addImage={addImage}
-    editImage={editImage}
-    deleteImage={deleteImage}
+    onSaveClick={onSaveClick}
+    onDeleteClick={onDeleteClick}
   />);
 });
 
@@ -60,12 +57,12 @@ describe('editable ImageCard', () => {
 
   it('should handle delete image', () => {
     wrapper.find('button').at(0).simulate('click');
-    expect(deleteImage).toHaveBeenCalled();
+    expect(onDeleteClick).toHaveBeenCalledWith();
   });
 
-  it('should handle edit image', () => {
+  it('should handle save image', () => {
     wrapper.find('button').at(1).simulate('click');
-    expect(editImage).toHaveBeenCalled();
+    expect(onSaveClick).toHaveBeenCalledWith({ title, subtitle, description });
   });
 
   it('should handle discard changes', () => {

@@ -4,3 +4,7 @@
   padding: 0 $m-size 0 $m-size;
   max-width: $desktop-1440-breakpoint;
 }
+
+.content-container--small {
+  max-width: 50rem;
+}

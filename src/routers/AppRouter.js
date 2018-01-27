@@ -8,6 +8,7 @@ import HomePage from '../components/pages/HomePage';
 import LoginPage from '../components/pages/LoginPage';
 import PortfolioPage from '../components/pages/PortfolioPage';
 import AdminPage from '../components/pages/AdminPage';
+import AddImagePage from '../components/pages/AddImagePage';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 import Route from './Route';
@@ -38,6 +39,13 @@ const AppRouter = () => (
         <PrivateRoute
           path={'/admin'}
           component={AdminPage}
+          header={AdminHeader}
+          fallbackTo={'/login'}
+          exact
+        />
+        <PrivateRoute
+          path={'/add'}
+          component={AddImagePage}
           header={AdminHeader}
           fallbackTo={'/login'}
           exact
