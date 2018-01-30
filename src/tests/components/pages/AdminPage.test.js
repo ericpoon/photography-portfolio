@@ -4,17 +4,17 @@ import { AdminPage } from '../../../components/pages/AdminPage';
 import images from '../../fixtures/images';
 
 let wrapper,
-  editImage,
-  deleteImage;
+  startEditImage,
+  startDeleteImage;
 
 beforeEach(() => {
-  editImage = jest.fn();
-  deleteImage = jest.fn();
+  startEditImage = jest.fn();
+  startDeleteImage = jest.fn();
   wrapper = shallow(
     <AdminPage
       images={images}
-      editImage={editImage}
-      deleteImage={deleteImage}
+      startEditImage={startEditImage}
+      startDeleteImage={startDeleteImage}
     />);
 });
 
@@ -23,12 +23,12 @@ it('should render AdminPage correctly', () => {
 });
 
 it('should have correct number of image cards', () => {
-  expect(wrapper.find('Connect(ImageCard)').length).toBe(images.length);
+  expect(wrapper.find('ImageCard').length).toBe(images.length);
 });
 
 it('should have correct number of editable image cards', () => {
   expect(wrapper
-    .find('Connect(ImageCard)')
+    .find('ImageCard')
     .filterWhere(imageCard => imageCard.prop('editable'))
     .length)
     .toBe(images.length);
@@ -36,11 +36,11 @@ it('should have correct number of editable image cards', () => {
 
 it('should handle editImage', () => {
   const updates = { title: 'new title' };
-  wrapper.find('Connect(ImageCard)').at(0).prop('onSaveClick')(updates);
-  expect(editImage).toHaveBeenCalledWith(images[0].id, updates);
+  wrapper.find('ImageCard').at(0).prop('onSaveClick')(updates);
+  expect(startEditImage).toHaveBeenCalledWith(images[0].id, updates);
 });
 
 it('should handle editImage', () => {
-  wrapper.find('Connect(ImageCard)').at(0).prop('onDeleteClick')();
-  expect(deleteImage).toHaveBeenCalledWith(images[0].id);
+  wrapper.find('ImageCard').at(0).prop('onDeleteClick')();
+  expect(startDeleteImage).toHaveBeenCalledWith(images[0].id);
 });

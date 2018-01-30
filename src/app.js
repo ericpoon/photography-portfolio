@@ -9,8 +9,7 @@ import configureStore from './store/configureStore';
 import { login, logout } from './actions/auth';
 import LoadingPage from './components/pages/LoadingPage';
 import firebase from './firebase/firebase';
-import { setImages } from './actions/images';
-import images from './tests/fixtures/images';
+import { startDownloadImages } from './actions/images';
 import './styles/styles.scss';
 
 const store = configureStore();
@@ -30,7 +29,7 @@ const renderApp = () => {
 };
 
 ReactDOM.render(<LoadingPage />, document.getElementById('app'));
-store.dispatch(setImages(images));
+store.dispatch(startDownloadImages());
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {

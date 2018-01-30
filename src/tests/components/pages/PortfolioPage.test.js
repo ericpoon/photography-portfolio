@@ -16,19 +16,19 @@ it('should render PortfolioPage', () => {
 });
 
 it('should have correct number of image cards', () => {
-  expect(wrapper.find('Connect(ImageCard)').length).toBe(images.length);
+  expect(wrapper.find('ImageCard').length).toBe(images.length);
 });
 
 it('should have no editable image cards', () => {
   expect(wrapper
-    .find('Connect(ImageCard)')
+    .find('ImageCard')
     .filterWhere(imageCard => imageCard.prop('editable'))
     .length)
     .toBe(0);
 });
 
 it('should show image detail after clicking image', () => {
-  const firstImageCard = wrapper.find('Connect(ImageCard)').at(0);
+  const firstImageCard = wrapper.find('ImageCard').at(0);
   firstImageCard.prop('onImageClick')();
   expect(showDetail).toHaveBeenCalledWith(firstImageCard.prop('id'));
 });

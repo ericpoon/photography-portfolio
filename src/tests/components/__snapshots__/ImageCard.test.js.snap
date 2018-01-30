@@ -7,12 +7,21 @@ exports[`editable ImageCard should render editable ImageCard correctly 1`] = `
   <div
     className="image-card__image"
     onClick={[MockFunction]}
+    style={
+      Object {
+        "backgroundImage": "url()",
+      }
+    }
   >
     <button
       className="button button--floating-top-left button--danger"
       onClick={[Function]}
     />
   </div>
+  <input
+    onChange={[Function]}
+    type="file"
+  />
   <div>
     <input
       className="image-card__title image-card__title--input"
@@ -56,6 +65,11 @@ exports[`non-editable/view-only ImageCard should render non-editable ImageCard c
   <div
     className="image-card__image"
     onClick={[MockFunction]}
+    style={
+      Object {
+        "backgroundImage": "url()",
+      }
+    }
   />
   <div>
     <h3

@@ -3,13 +3,13 @@ import { shallow } from 'enzyme';
 import { AddImagePage } from '../../../components/pages/AddImagePage';
 
 let wrapper,
-  addImage;
+  startAddImage;
 
 beforeEach(() => {
-  addImage = jest.fn();
+  startAddImage = jest.fn();
   wrapper = shallow(
     <AddImagePage
-      addImage={addImage}
+      startAddImage={startAddImage}
     />);
 });
 
@@ -19,6 +19,6 @@ it('renders AddImagePage correctly', () => {
 
 it('handles addImage correctly', () => {
   const imageToAdd = { title: 'title', subtitle: 'subtitle' };
-  wrapper.find('Connect(ImageCard)').prop('onSaveClick')(imageToAdd);
-  expect(addImage).toHaveBeenCalledWith(imageToAdd);
+  wrapper.find('ImageCard').prop('onSaveClick')(imageToAdd);
+  expect(startAddImage).toHaveBeenCalledWith(imageToAdd);
 });
