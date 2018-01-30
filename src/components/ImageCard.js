@@ -1,11 +1,14 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
-export class ImageCard extends React.Component {
+class ImageCard extends React.Component {
   constructor(props) {
     super();
-    const { title = '', subtitle = '', description = '' } = props;
-    this.state = { title, subtitle, description };
+    const {
+      title = '', subtitle = '', description = '', file = null, fileUrl = '',
+    } = props;
+    this.state = {
+      title, subtitle, description, file, fileUrl,
+    };
   }
 
   onTitleChange = (e) => {
@@ -17,10 +20,18 @@ export class ImageCard extends React.Component {
   onDescriptionChange = (e) => {
     this.setState({ description: e.target.value.trim() });
   };
+  onFileChange = (file) => {
+    console.log(file);
+    this.setState({ file });
+  };
   onSaveClick = () => {
-    const { title, subtitle, description } = this.state;
+    const {
+      title, subtitle, description, file,
+    } = this.state;
     const { onSaveClick } = this.props;
-    const updates = { title, subtitle, description };
+    const updates = {
+      title, subtitle, description, file,
+    };
     if (onSaveClick) onSaveClick(updates);
   };
   onDeleteClick = () => {
@@ -45,12 +56,17 @@ export class ImageCard extends React.Component {
     if (editable) {
       return (
         <div className={'image-card'}>
-          <div className={'image-card__image'} onClick={onImageClick}>
+          <div
+            className={'image-card__image'}
+            style={{ backgroundImage: `url(${this.state.fileUrl})` }}
+            onClick={onImageClick}
+          >
             <button
               className={'button button--floating-top-left button--danger'}
               onClick={this.onDeleteClick}
             />
           </div>
+          <input type={'file'} onChange={e => this.onFileChange(e.target.files[0])} />
           <div>
             <input
               className={
@@ -87,7 +103,11 @@ export class ImageCard extends React.Component {
 
     return (
       <div className={'image-card'}>
-        <div className={'image-card__image'} onClick={onImageClick} />
+        <div
+          className={'image-card__image'}
+          style={{ backgroundImage: `url(${this.state.fileUrl})` }}
+          onClick={onImageClick}
+        />
         <div>
           <h3 className={'image-card__title'}>{title}</h3>
           <h4 className={'image-card__subtitle'}>{subtitle}</h4>
@@ -98,4 +118,4 @@ export class ImageCard extends React.Component {
   }
 }
 
-export default connect()(ImageCard);
+export default ImageCard;

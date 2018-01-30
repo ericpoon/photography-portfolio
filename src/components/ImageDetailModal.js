@@ -4,7 +4,9 @@ import Modal from 'react-modal';
 import { hideDetail } from '../actions/gallery';
 
 export const ImageDetailModal = (props) => {
-  const { title, subtitle, description } = props;
+  const {
+    title, subtitle, description, fileUrl,
+  } = props;
 
   return (
     <Modal
@@ -13,7 +15,7 @@ export const ImageDetailModal = (props) => {
       appElement={document.getElementById('app')}
     >
       <div>
-        <img src={'/images/bg.jpg'} alt={''} />
+        <img src={fileUrl} alt={''} />
         <h3>{title}</h3>
         <h4>{subtitle}</h4>
         <p>{description}</p>
@@ -30,6 +32,7 @@ const mapStateToProps = (state) => {
     title: image ? image.title : null,
     subtitle: image ? image.subtitle : null,
     description: image ? image.description : null,
+    fileUrl: image ? image.fileUrl : null,
   };
 };
 

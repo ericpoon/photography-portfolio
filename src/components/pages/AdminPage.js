@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { editImage, deleteImage } from '../../actions/images';
+import { startEditImage, startDeleteImage } from '../../actions/images';
 import ImageCardCollection from '../ImageCardCollection';
 import ImageCard from '../ImageCard';
 
@@ -15,8 +15,8 @@ export const AdminPage = (props) => {
                 {...image}
                 editable
                 key={image.id}
-                onSaveClick={updates => props.editImage(image.id, updates)}
-                onDeleteClick={() => props.deleteImage(image.id)}
+                onSaveClick={updates => props.startEditImage(image.id, updates)}
+                onDeleteClick={() => props.startDeleteImage(image.id)}
               />);
           })}
         </ImageCardCollection>
@@ -29,4 +29,4 @@ const mapStateToProps = state => ({
   images: state.images,
 });
 
-export default connect(mapStateToProps, { editImage, deleteImage })(AdminPage);
+export default connect(mapStateToProps, { startEditImage, startDeleteImage })(AdminPage);

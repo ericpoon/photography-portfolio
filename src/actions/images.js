@@ -1,6 +1,7 @@
 import firebase from '../firebase/firebase';
 
 const database = firebase.database();
+const storage = firebase.storage();
 
 export const setImages = images => ({
   type: 'SET_IMAGES',
@@ -29,13 +30,26 @@ export const addImage = image => ({
 });
 
 export const startAddImage = (image) => {
+  const {
+    title, subtitle, description, file,
+  } = image;
   return (dispatch) => {
-    return database.ref('/images').push(image)
-      .then((ref) => {
-        dispatch(addImage({
-          id: ref.key,
-          ...image,
-        }));
+    const id = database.ref('/images').push().key;
+    return storage.ref(`/images/${id}`).put(file, { cacheControl: 'private, max-age=60' })
+      .then((snapshot) => {
+        const fileUrl = snapshot.downloadURL;
+        return database.ref(`/images/${id}`).set({
+          title, subtitle, description, fileUrl,
+        })
+          .then(() => {
+            dispatch(addImage({
+              id,
+              title,
+              subtitle,
+              description,
+              fileUrl,
+            }));
+          });
       });
   };
 };

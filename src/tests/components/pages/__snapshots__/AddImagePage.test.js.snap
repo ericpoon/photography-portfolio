@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders AddImagePage correctly 1`] = `
+<div
+  className="content-container content-container--small"
+>
+  <ImageCard
+    editable={true}
+    onSaveClick={[Function]}
+  />
+</div>
+`;

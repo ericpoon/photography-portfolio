@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { ImageCard } from '../../components/ImageCard';
+import ImageCard from '../../components/ImageCard';
 import images from '../fixtures/images';
 
 let wrapper,
@@ -62,7 +62,9 @@ describe('editable ImageCard', () => {
 
   it('should handle save image', () => {
     wrapper.find('button').at(1).simulate('click');
-    expect(onSaveClick).toHaveBeenCalledWith({ title, subtitle, description });
+    expect(onSaveClick).toHaveBeenCalledWith({
+      title, subtitle, description, file: null,
+    });
   });
 
   it('should handle discard changes', () => {
