@@ -51,17 +51,21 @@ const cardTarget = {
       && clientOffset.x < hoverBoundingRect.right
       && clientOffset.y > hoverBoundingRect.top
       && clientOffset.y < hoverBoundingRect.bottom) {
-      props.moveCard(dragIndex, hoverIndex); // actually perform the action
+      props.trigger(dragIndex, hoverIndex); // actually perform the action
       monitor.getItem().setIndex(hoverIndex); // update the item being dragged
     }
   },
 };
 
+const sourceCollect = (connect, monitor) => ({
+  connectDragSource: connect.dragSource(),
+  isDragging: monitor.isDragging(),
+});
+const targetCollect = (connect, monitor) => ({
+  connectDropTarget: connect.dropTarget(),
+});
+
 export default flow(
-  DragSource(itemType, cardSource, (connect, monitor) => ({
-    connectDragSource: connect.dragSource(),
-    isDragging: monitor.isDragging(),
-  })),
-  DropTarget(itemType, cardTarget, (connect, monitor) => ({
-    connectDropTarget: connect.dropTarget(),
-  })))(SortableContainer);
+  DragSource(itemType, cardSource, sourceCollect),
+  DropTarget(itemType, cardTarget, targetCollect)
+)(SortableContainer);

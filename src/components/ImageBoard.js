@@ -9,7 +9,7 @@ const COL_NUM = 3;
 // todo: Item states are not persisted,
 // use redux store to keep track of those images being edited (not all)
 
-class ImageBoard extends React.Component {
+export class ImageBoard extends React.Component {
   constructor(props) {
     super();
     this.state = { images: props.children };
@@ -38,7 +38,7 @@ class ImageBoard extends React.Component {
       if (!grid[row]) grid[row] = [];
       grid[row][col] = sortable ? (
         <SortableContainer
-          moveCard={this.moveCard}
+          trigger={this.moveCard}
           index={index}
           key={current.key}
         >

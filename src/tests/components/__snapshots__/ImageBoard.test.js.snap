@@ -1,9 +1,137 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render ImageCardCollection 1`] = `
-<ImageBoard>
-  <mockConstructor />
-  <mockConstructor />
-  <mockConstructor />
-</ImageBoard>
+exports[`Testing the original component in isolation should render ImageBoard 1`] = `
+<DragDropContext(ImageBoard)
+  sortable={false}
+>
+  <ImageBoard
+    sortable={false}
+  >
+    <div
+      className="image-card-collection"
+    >
+      <div
+        className="image-card-collection__row"
+        key="0,1,2"
+      >
+        <mockConstructor
+          key="0"
+        >
+          <div />
+        </mockConstructor>
+        <mockConstructor
+          key="1"
+        >
+          <div />
+        </mockConstructor>
+        <mockConstructor
+          key="2"
+        >
+          <div />
+        </mockConstructor>
+      </div>
+    </div>
+  </ImageBoard>
+</DragDropContext(ImageBoard)>
+`;
+
+exports[`Testing the original component in isolation should render sortable ImageBoard 1`] = `
+<DragDropContext(ImageBoard)
+  sortable={true}
+>
+  <ImageBoard
+    sortable={true}
+  >
+    <div
+      className="image-card-collection"
+    >
+      <div
+        className="image-card-collection__row"
+        key="0,1,2"
+      >
+        <DropTarget(DragSource(SortableContainer))
+          index={0}
+          key="0"
+          trigger={[Function]}
+        >
+          <DragSource(SortableContainer)
+            connectDropTarget={[Function]}
+            index={0}
+            trigger={[Function]}
+          >
+            <SortableContainer
+              connectDragSource={[Function]}
+              connectDropTarget={[Function]}
+              index={0}
+              isDragging={false}
+              trigger={[Function]}
+            >
+              <div>
+                <mockConstructor
+                  key="0"
+                >
+                  <div />
+                </mockConstructor>
+              </div>
+            </SortableContainer>
+          </DragSource(SortableContainer)>
+        </DropTarget(DragSource(SortableContainer))>
+        <DropTarget(DragSource(SortableContainer))
+          index={1}
+          key="1"
+          trigger={[Function]}
+        >
+          <DragSource(SortableContainer)
+            connectDropTarget={[Function]}
+            index={1}
+            trigger={[Function]}
+          >
+            <SortableContainer
+              connectDragSource={[Function]}
+              connectDropTarget={[Function]}
+              index={1}
+              isDragging={false}
+              trigger={[Function]}
+            >
+              <div>
+                <mockConstructor
+                  key="1"
+                >
+                  <div />
+                </mockConstructor>
+              </div>
+            </SortableContainer>
+          </DragSource(SortableContainer)>
+        </DropTarget(DragSource(SortableContainer))>
+        <DropTarget(DragSource(SortableContainer))
+          index={2}
+          key="2"
+          trigger={[Function]}
+        >
+          <DragSource(SortableContainer)
+            connectDropTarget={[Function]}
+            index={2}
+            trigger={[Function]}
+          >
+            <SortableContainer
+              connectDragSource={[Function]}
+              connectDropTarget={[Function]}
+              index={2}
+              isDragging={false}
+              trigger={[Function]}
+            >
+              <div>
+                <mockConstructor
+                  key="2"
+                >
+                  <div />
+                </mockConstructor>
+              </div>
+            </SortableContainer>
+          </DragSource(SortableContainer)>
+        </DropTarget(DragSource(SortableContainer))>
+      </div>
+    </div>
+  </ImageBoard>
+</DragDropContext(ImageBoard)>
 `;
