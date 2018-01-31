@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Header from './common/Header';
+import Header from './presentational/Header';
 import { startLogout } from '../actions/auth';
 
 export const AdminHeader = (props) => {

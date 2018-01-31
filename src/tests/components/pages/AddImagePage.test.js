@@ -19,6 +19,6 @@ it('renders AddImagePage correctly', () => {
 
 it('handles addImage correctly', () => {
   const imageToAdd = { title: 'title', subtitle: 'subtitle' };
-  wrapper.find('ImageCard').prop('onSaveClick')(imageToAdd);
+  wrapper.find('EditableImageCard').prop('onSaveClick')(imageToAdd);
   expect(startAddImage).toHaveBeenCalledWith(imageToAdd);
 });

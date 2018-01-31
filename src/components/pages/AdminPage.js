@@ -1,25 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { startEditImage, startDeleteImage } from '../../actions/images';
-import ImageCardCollection from '../ImageCardCollection';
-import ImageCard from '../ImageCard';
+import ImageBoard from '../ImageBoard';
+import EditableImageCard from '../presentational/EditableImageCard';
 
 export const AdminPage = (props) => {
   return (
     <div>
       <div className={'content-container'}>
-        <ImageCardCollection>
+        <ImageBoard sortable>
           {props.images.map((image) => {
             return (
-              <ImageCard
+              <EditableImageCard
                 {...image}
-                editable
                 key={image.id}
                 onSaveClick={updates => props.startEditImage(image.id, updates)}
                 onDeleteClick={() => props.startDeleteImage(image.id)}
               />);
           })}
-        </ImageCardCollection>
+        </ImageBoard>
       </div>
     </div>
   );

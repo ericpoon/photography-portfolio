@@ -6,7 +6,7 @@ exports[`should render PortfolioPage 1`] = `
   <div
     className="content-container"
   >
-    <Component>
+    <DragDropContext(ImageBoard)>
       <ImageCard
         description="Putarem quodque tamquam ii ob an deumque. Me assequi sapores ab verarum. Mei qui religionis nam fas devenietur ponderibus. Junctae invenit plausum differt de ipsamet externo is. Mutationum sui negationem exponuntur"
         fileUrl="www.google.com"
@@ -52,7 +52,7 @@ exports[`should render PortfolioPage 1`] = `
         subtitle="Oct 9, 2016"
         title="Shanghai"
       />
-    </Component>
+    </DragDropContext(ImageBoard)>
   </div>
 </div>
 `;
