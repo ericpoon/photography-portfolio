@@ -37,6 +37,7 @@
     "arrow-body-style": "off",
     "no-restricted-globals": "off",
     "function-paren-newline": "off",
+    "one-var-declaration-per-line": "off",
     "comma-dangle": [
       "error",
       {
