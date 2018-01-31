@@ -15,6 +15,6 @@ export default () => {
       gallery: galleryReducer,
       images: imagesReducer,
     }),
-    composeEnhancers(applyMiddleware(thunk)),
+    composeEnhancers(applyMiddleware(thunk))
   );
 };

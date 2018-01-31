@@ -4,7 +4,7 @@ exports[`renders AddImagePage correctly 1`] = `
 <div
   className="content-container content-container--small"
 >
-  <ImageCard
+  <EditableImageCard
     editable={true}
     onSaveClick={[Function]}
   />

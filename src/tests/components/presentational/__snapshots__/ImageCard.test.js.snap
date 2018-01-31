@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render non-editable ImageCard correctly 1`] = `
+<div
+  className="image-card"
+>
+  <div
+    className="image-card__image"
+    onClick={[MockFunction]}
+    style={
+      Object {
+        "backgroundImage": "url(undefined)",
+      }
+    }
+  />
+  <div>
+    <h3
+      className="image-card__title"
+    >
+      Kowloon
+    </h3>
+    <h4
+      className="image-card__subtitle"
+    >
+      Dec 31, 2017
+    </h4>
+    <p
+      className="image-card__description"
+    >
+      Putarem quodque tamquam ii ob an deumque. Me assequi sapores ab verarum. Mei qui religionis nam fas devenietur ponderibus. Junctae invenit plausum differt de ipsamet externo is. Mutationum sui negationem exponuntur
+    </p>
+  </div>
+</div>
+`;

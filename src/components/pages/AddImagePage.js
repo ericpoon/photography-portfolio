@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { startAddImage } from '../../actions/images';
-import ImageCard from '../ImageCard';
+import EditableImageCard from '../presentational/EditableImageCard';
 
 export const AddImagePage = (props) => {
   return (
     <div className={'content-container content-container--small'}>
-      <ImageCard
+      <EditableImageCard
         editable
         onSaveClick={updates => props.startAddImage(updates)}
       />

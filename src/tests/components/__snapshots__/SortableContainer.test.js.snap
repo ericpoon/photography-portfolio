@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing the original component in isolation should render container correctly 1`] = `<div />`;
