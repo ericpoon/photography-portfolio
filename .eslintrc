@@ -37,6 +37,28 @@
     "arrow-body-style": "off",
     "no-restricted-globals": "off",
     "function-paren-newline": "off",
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "never"
+      }
+    ],
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectExpression": {
+          "consistent": true
+        },
+        "ObjectPattern": {
+          "multiline": true,
+          "consistent": true
+        }
+      }
+    ],
     "import/no-extraneous-dependencies": "off",
     "import/no-named-as-default": "off",
     "jsx-a11y/anchor-is-valid": [
